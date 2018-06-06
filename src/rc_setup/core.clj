@@ -37,6 +37,8 @@
    :unit unit,
    :unit_description {:en unit-label},
    :factor 1,
+   :technicalResourceIdType "undefined"
+   :dataSource "usage"
    :rounding_mode "Commercial"})
 
 (defn ->json [d]
@@ -61,17 +63,23 @@
     (spit "/Users/i303874/Desktop/test.json")))
 
 ; units
-(def units [{:code "piece", :description "piece"}
-              {:code "domain", :description "domains"}
-              {:code "requests", :description "requests"}
-              {:code "formRequests", :description "form requests"}
-              {:code "apiCalls", :description "API calls"}
-              {:code "instances", :description "instances"}
-              {:code "users", :description "users"}
-              {:code "visits", :description "visits"}
-              {:code "hours", :description "hours"}
-              {:code "blocks", :description "blocks"}
-              {:code "gb", :description "GB"}])
+(def units [{:code "uses", :description "uses"}
+            {:code "connections", :description "connections"}
+            {:code "workbenches", :description "workbenches"}
+            {:code "servers", :description "servers"}
+            {:code "integrations", :description "integrations"}
+            {:code "piece" :description "piece"}
+            {:code "domain", :description "domains"}
+            {:code "requests", :description "requests"}
+            {:code "formRequests", :description "form requests"}
+            {:code "apiCalls", :description "API calls"}
+            {:code "instances", :description "instances"}
+            {:code "users", :description "users"}
+            {:code "visits", :description "visits"}
+            {:code "hours", :description "hours"}
+            {:code "blocks", :description "blocks"}
+            {:code "gb", :description "GB"}
+            {:code "tb", :description "TB"}])
 
 
 (->>
@@ -81,7 +89,25 @@
   (spit "/Users/i303874/Desktop/units.txt"))
 
 ;rate plan elements
-(def rate-plan-elements [["fixedFees" "Fixed Fees" "piece" "piece"]
+(def rate-plan-elements [["data_streams" "Data Streams" "piece" "piece"]
+                         ["compute_hours" "Compute Hours" "hours" "hours"]
+                         ["translated_characters" "Translated Characters" "piece" "piece"]
+                         ["devices_in_blocks_of_1" "Devices in blocks of 1" "blocks" "blocks"]
+                         ["storage_tb" "Storage TB" "tb" "TB"]
+                         ["file_count" "File Count" "piece" "piece"]
+                         ["connections" "Connections" "connections" "connections"]
+                         ["hcu_per_hour" "HCU per Hour" "hours" "hours"]
+                         ["operation_hours" "Operation Hours" "hours" "hours"]
+                         ["cpbdsasec" "Advanced Security" "uses" "uses"]
+                         ["vpnlink" "VPN Connections" "connections" "connections"]
+                         ["workbench" "Workbenches" "workbenches" "workbenches"]
+                         ["datalink" "Data Transfer Server" "servers" "servers"]
+                         ["hanalink" "SAP HANA Integrations" "integrations" "integrations"]
+                         ["compute_hours_in_blocks_of_5000" "Compute Hours in Blocks of 5000" "blocks" "blocks"]
+                         ["files_in_blocks_of_1000000" "Additional Files in Blocks of 1 Million" "blocks" "blocks"]
+                         ["storage_in_10_tb_blocks" "Storage in Blocks of 10 TB" "blocks" "blocks"]
+                         ["memory_in_16_gb_blocks" "Memory in 16 GB Blocks" "blocks" "blocks"]
+                         ["fixedFees" "Fixed Fees" "piece" "piece"]
                          ["custom_domains" "Custom Domains" "domain" "domains"]
                          ["requests" "Requests" "requests" "requests"]
                          ["form_requests" "Form Requests" "formRequests" "form requests"]
@@ -99,7 +125,6 @@
                          ["storage_gb" "GB Storage" "gb" "GB"]
                          ["bandwidth_gb" "GB Bandwidth" "gb" "GB"]
                          ["memory_gb" "GB Memory" "gb" "GB"]
-
                          #_["bandwidth_xx" "IGNORE" "gb" "GB"]
                          ["records_in_block_of_1000" "IGNORE" "blocks" "blocks"]
                          ["logons_in_block_of_100" "IGNORE" "blocks" "blocks"]
