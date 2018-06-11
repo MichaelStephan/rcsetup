@@ -90,6 +90,7 @@
 
 ;rate plan elements
 (def rate-plan-elements [["data_streams" "Data Streams" "piece" "piece"]
+                         ["flat_fee" "Flat Fee" "piece" "piece"]
                          ["compute_hours" "Compute Hours" "hours" "hours"]
                          ["translated_characters" "Translated Characters" "piece" "piece"]
                          ["devices_in_blocks_of_1" "Devices in blocks of 1" "blocks" "blocks"]
