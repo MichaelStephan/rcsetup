@@ -16,7 +16,8 @@
              :state "NY"
              :postalCode "12345"
              :country "US"}
-  :pricingProcedure ""})
+  :pricingProcedure ""
+  :priceType "Net"})
 
 (defn make-add-op [path data]
   (merge data
@@ -138,7 +139,7 @@
   (spit "/Users/i303874/Desktop/metrics.txt"))
 
 ; markets
-(def currencies ["ARS" "AUD" "BGN" "BRL" "CAD" "CHF" "CNY" "COP" "CZK" "DKK" "EUR" "GBP" "HKD" "HUF" "IDR" "ILS" "INR" "MXN" "MYR" "NOK" "NZD" "PEN" "PHP" "PLN" "RON" "RUB" "SEK" "SGD" "THB" "TRY" "TWD" "USD" "ZAR"])
+(def currencies ["ARS" "AUD" "BGN" "BRL" "CAD" "CHF" "CNY" "COP" "CZK" "DKK" "EUR" "GBP" "HKD" "HUF" "IDR" "ILS" "INR" "MXN" "MYR" "NOK" "NZD" "PEN" "PHP" "PLN" "RON" "RUB" "SEK" "SGD" "THB" "TRY" "TWD" "USD" "ZAR" "UAH" "JPY" "KRW"])
 
 (->>
   (-> nil
