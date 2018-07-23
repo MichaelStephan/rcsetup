@@ -90,7 +90,10 @@
   (spit "/Users/i303874/Desktop/units.txt"))
 
 ;rate plan elements
-(def rate-plan-elements [["data_streams" "Data Streams" "piece" "piece"]
+(def rate-plan-elements [["persistence_in_16_gb_blocks" "Persistence in 16gb Blocks" "blocks" "blocks"]
+                         ["runtime_in_16_gb_blocks" "Runtime in 16gb Blocks" "blocks" "blocks"]
+                         ["records" "Records" "piece" "piece"]
+                         ["data_streams" "Data Streams" "piece" "piece"]
                          ["flat_fee" "Flat Fee" "piece" "piece"]
                          ["compute_hours" "Compute Hours" "hours" "hours"]
                          ["translated_characters" "Translated Characters" "piece" "piece"]
