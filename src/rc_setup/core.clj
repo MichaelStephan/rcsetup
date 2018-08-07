@@ -53,6 +53,7 @@
       "var xmlHttp = new XMLHttpRequest();
        xmlHttp.open( \"" action "\", \"" path "\", false);
        xmlHttp.setRequestHeader(\"Content-type\", \"application/json\");
+       xmlHttp.setRequestHeader(\"x-csrf-token\", csrfToken);
        xmlHttp.send(JSON.stringify(" data-var "));
        console.log(xmlHttp.responseText);"))
 
@@ -130,7 +131,7 @@
                          ["storage_gb" "GB Storage" "gb" "GB"]
                          ["bandwidth_gb" "GB Bandwidth" "gb" "GB"]
                          ["memory_gb" "GB Memory" "gb" "GB"]
-                         #_["bandwidth_xx" "IGNORE" "gb" "GB"]
+                         ["bandwidth_xx" "IGNORE" "gb" "GB"]
                          ["records_in_block_of_1000" "IGNORE" "blocks" "blocks"]
                          ["logons_in_block_of_100" "IGNORE" "blocks" "blocks"]
                          ["devices_in_block_of_100" "IGNORE" "blocks" "blocks"]
