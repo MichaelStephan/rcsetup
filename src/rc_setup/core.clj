@@ -133,7 +133,9 @@
                          #_["bandwidth_xx" "IGNORE" "gb" "GB"]
                          ["records_in_block_of_1000" "IGNORE" "blocks" "blocks"]
                          ["logons_in_block_of_100" "IGNORE" "blocks" "blocks"]
-                         ["devices_in_block_of_100" "IGNORE" "blocks" "blocks"]])
+                         ["devices_in_block_of_100" "IGNORE" "blocks" "blocks"]
+                         ["gb_archive_iotae" "GB Storage" "gb" "GB"]
+                         ["gb_store_iotae" "GB Storage" "gb" "GB"]])
 
 (->>
   (-> nil
